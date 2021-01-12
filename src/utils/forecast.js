@@ -17,13 +17,14 @@ const getWeather = (lon, lat, callback) => {
         }
         else {
             const estado = body.current.weather_descriptions[0]
-            const temp = body.current.temperature
+            const temp   = body.current.temperature
             const precip = body.current.precip
+            const humid  = body.current.humidity
         
             // console.log('Neste momento está '+ estado + ', com temperaturas de ' + temp + 
             //             'º Celcius e há ' + precip + '% de probabilidade de chuva.')      
             
-            data = {estado, temp, precip}
+            data = {estado, temp, precip, humid}
 
             callback( undefined, data )
         }

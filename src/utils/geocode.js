@@ -10,8 +10,11 @@ const getGeocode = (address, callback) => {
         else if(body.features.length === 0 ) {
             callback('Unable to find location', undefined)
         }
-        else {        
-            const local = body.features[0].place_name
+        else {
+
+            console.log("URL ::: " + url)
+
+            const local = body.features[0].text
             const lon = body.features[0].center[0]
             const lat = body.features[0].center[1]
 

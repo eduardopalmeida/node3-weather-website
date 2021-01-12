@@ -57,12 +57,12 @@ app.get('/weather', (req, res) => {
         if(error) {
             return res.send({error})
         }
-        forecast(lon, lat, (error, {estado, temp, precip} = {}) => {
+        forecast(lon, lat, (error, {estado, temp, precip, humid} = {}) => {
             if(error) {
                 return res.send({error})
             }
             const forecast = 'Em ' + local + ' neste momento está '+ estado + ', com temperaturas de ' + 
-                        temp + 'º Celcius e há ' + precip + '% de probabilidade de chuva.'
+                        temp + 'º Celcius, a humidade é de ' + humid + '% e há ' + precip + '% de probabilidade de chuva.'
 
             res.send({
                 location: local,
@@ -86,7 +86,6 @@ app.get('/products', (req, res) => {
     res.send({
         products : [] 
     })
-
 })
 
 app.get('/help/*', (req, res) => {
