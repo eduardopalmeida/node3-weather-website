@@ -8,7 +8,7 @@ const forecast = require('./utils/forecast')
 const name = 'Eduardo Peixoto de Almeida'
 
 // Start Server
-const serverPort = 3000
+const serverPort = process.env.PORT || 3000
 const app = express()
 
 // Define paths for Express config
